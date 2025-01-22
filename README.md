@@ -3,7 +3,7 @@
 ```
 sudo -s
 apt update && apt upgrade
-apt install allmon3
+apt install allmon3 && apt install git
 
 wget http://dvswitch.org/bookworm
 chmod +x bookworm
