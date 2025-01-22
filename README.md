@@ -1,5 +1,7 @@
 # allstar
 
+Run updates and install allstarlink3
+
 ```
 sudo -s
 apt update && apt upgrade
@@ -13,7 +15,7 @@ apt update && apt install dvswitch-server
 asl-menu (configure allstar)
 nano /etc/asterisk/simpleusb.conf
 ```
-
+Paste this into simpleusb.conf
 ```
 ;***************************************************
 ;********   Template-tized simpleusb.conf   ********
@@ -117,4 +119,106 @@ devstr=
 rxmixerset=500
 txmixaset=500
 txmixbset=500
+```
+Configure allmon3 allnode.local/allmon3
+```
+nano /etc/allmon3/allmon3.ini (make password ALLnodePWxxx)
+allmon3-passwd --delete allmon3
+allmon3-passwd admin
+nano /etc/asterisk/manager.conf (make password ALLnodePWxxx)
+
+systemctl start allmon3
+systemctl status allmon3
+
+if it doesn't work run the password commands again and/or reboot
+```
+Install allscan allnode.local/allscan
+```
+cd ~
+wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
+chmod 755 AllScanInstallUpdate.php
+./AllScanInstallUpdate.php
+```
+Configure echolink
+```
+nano /etc/asterisk/echolink.conf
+nano /etc/asterisk/modules.conf
+systemctl restart asterisk
+```
+Configure private node 1999 for dvswitch
+```
+nano /etc/asterisk/rpt.conf
+
+
+rxchannel = USRP/127.0.0.1:34001:32001  ; Use the USRP channel driver. Must be enabled in modules.conf
+; 127.0.0.1 = IP of the target application
+; 34001 = UDP port the target application is listening on
+; 32001 = UDP port ASL is listening on
+duplex = 0
+hangtime = 0
+althangtime = 0
+holdofftelem = 1
+telemdefault = 0
+telemdynamic = 0
+linktolink = no
+nounkeyct = 1
+totime = 180000
+```
+Setup DVSwitch
+```
+cd /usr/local/dvs
+./dvs (first configure dvswitch)
+
+configure /opt/Analog_Bridge/Analog_Bridge.ini | /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+
+test using
+
+/opt/MMDVM_Bridge/dvswitch.sh mode YSF
+/opt/MMDVM_Bridge/dvswitch.sh tune parrot.ysfreflector.de:42020
+```
+Setup DVSwitch mode switcher
+```
+sudo -s
+
+apt update && apt upgrade && apt install git && apt install nodejs
+
+cd /opt
+
+git clone https://github.com/firealarmss/dvswitch_mode_switcher
+
+cd dvswitch_mode_switcher
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+source ~/.bashrc
+
+nvm install 18
+
+nvm use 18
+
+cp configs/config.example.yml configs/config.yml
+
+cp configs/tg_alias.example.yml configs/tg_alias.yml
+
+npm install yargs path
+
+npm i
+
+node index.js -c configs/config.yml
+
+***************IF ALL THINGS WORK**************
+
+cd /opt/dvswitch_mode_switcher
+
+cp debian/dvswitch_mode_switcher.service /etc/systemd/system/dvswitch_mode_switcher.service
+
+systemctl daemon-reload
+
+systemctl enable dvswitch_mode_switcher.service
+
+systemctl start dvswitch_mode_switcher.service
 ```
