@@ -1,6 +1,6 @@
 # allstar
 
-Run updates and install allstarlink3
+# Run updates and install allstarlink3
 
 ```
 sudo -s
@@ -15,7 +15,7 @@ apt update && apt install dvswitch-server
 asl-menu (configure allstar)
 nano /etc/asterisk/simpleusb.conf
 ```
-Paste this into simpleusb.conf
+# Paste this into simpleusb.conf
 ```
 ;***************************************************
 ;********   Template-tized simpleusb.conf   ********
@@ -120,7 +120,7 @@ rxmixerset=500
 txmixaset=500
 txmixbset=500
 ```
-Configure allmon3 allnode.local/allmon3
+# Configure allmon3 allnode.local/allmon3 (optional)
 ```
 nano /etc/allmon3/allmon3.ini (make password ALLnodePWxxx)
 allmon3-passwd --delete allmon3
@@ -132,20 +132,20 @@ systemctl status allmon3
 
 if it doesn't work run the password commands again and/or reboot
 ```
-Install allscan allnode.local/allscan
+# Install allscan allnode.local/allscan (optional)
 ```
 cd ~
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
 ./AllScanInstallUpdate.php
 ```
-Configure echolink
+# Configure echolink (optional)
 ```
 nano /etc/asterisk/echolink.conf
 nano /etc/asterisk/modules.conf
 systemctl restart asterisk
 ```
-Configure private node 1999 for dvswitch
+# Configure private node 1999 for dvswitch (optional if skipping dvswitch)
 ```
 nano /etc/asterisk/rpt.conf
 
@@ -164,7 +164,7 @@ linktolink = no
 nounkeyct = 1
 totime = 180000
 ```
-Setup DVSwitch
+# Setup DVSwitch (optional if skipping dvswitch)
 ```
 cd /usr/local/dvs
 ./dvs (first configure dvswitch)
@@ -176,7 +176,7 @@ test using
 /opt/MMDVM_Bridge/dvswitch.sh mode YSF
 /opt/MMDVM_Bridge/dvswitch.sh tune parrot.ysfreflector.de:42020
 ```
-Setup DVSwitch mode switcher
+# Setup DVSwitch mode switcher (optional, but recommended)
 ```
 sudo -s
 
@@ -222,6 +222,6 @@ systemctl enable dvswitch_mode_switcher.service
 
 systemctl start dvswitch_mode_switcher.service
 ```
-Configure connection software
+Configure connection software (optional
 ```
 ```
