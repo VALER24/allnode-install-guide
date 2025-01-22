@@ -8,8 +8,7 @@ apt install allmon3 && apt install git
 wget http://dvswitch.org/bookworm
 chmod +x bookworm
 ./bookworm
-apt update
-apt install dvswitch-server
+apt update && apt install dvswitch-server
 
 asl-menu (configure allstar)
 nano /etc/asterisk/simpleusb.conf
