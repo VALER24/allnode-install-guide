@@ -1,5 +1,6 @@
 # allstar
 
+```
 sudo -s
 apt update && apt upgrade
 apt install allmon3
@@ -12,6 +13,7 @@ apt install dvswitch-server
 
 asl-menu (configure allstar)
 nano /etc/asterisk/simpleusb.conf
+```
 
 ```
 ;***************************************************
