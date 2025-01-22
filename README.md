@@ -1,4 +1,4 @@
-# allstar
+# Guide to installing software on AllNode device
 
 # Run updates and install allstarlink3
 
