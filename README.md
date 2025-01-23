@@ -222,6 +222,6 @@ systemctl enable dvswitch_mode_switcher.service
 
 systemctl start dvswitch_mode_switcher.service
 ```
-Configure connection software (optional
+Configure connection software (optional)
 ```
 ```
