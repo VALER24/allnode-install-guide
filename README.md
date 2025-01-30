@@ -3,6 +3,7 @@
 # Install everything with script
 
 ```
+sudo -s
 cd /tmp
 nano script.sh (paste in the script.sh in this repo)
 chmod +x script.sh
