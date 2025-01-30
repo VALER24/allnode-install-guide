@@ -1,5 +1,14 @@
 # Guide to installing software on AllNode device
 
+# Install everything with script
+
+```
+cd /tmp
+nano script.sh (paste in the script.sh in this repo)
+chmod +x script.sh
+./script.sh
+```
+
 # Run updates and install allstarlink3
 
 ```
