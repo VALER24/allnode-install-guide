@@ -39,3 +39,5 @@ cp configs/tg_alias.example.yml configs/tg_alias.yml
 cp debian/dvswitch_mode_switcher.service /etc/systemd/system/dvswitch_mode_switcher.service
 npm install yargs path
 npm i
+systemctl daemon-reload
+systemctl enable dvswitch_mode_switcher.service
