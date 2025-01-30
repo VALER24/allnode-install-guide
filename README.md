@@ -10,7 +10,7 @@ chmod +x script.sh
 ./script.sh
 ```
 
-# Run updates and install allstarlink3
+# Run updates and install allstarlink3, allmon3, & dvswitch
 
 ```
 sudo -s
