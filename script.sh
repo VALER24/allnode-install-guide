@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # install asl3 and allmon3
 
 apt update && apt upgrade
