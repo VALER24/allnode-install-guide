@@ -24,8 +24,12 @@ wget http://dvswitch.org/bookworm
 chmod +x bookworm
 ./bookworm
 apt update && apt install dvswitch-server
+```
 
-asl-menu (configure allstar)
+# Configure allstarlink
+
+```
+asl-menu (configure allstar, and make private node 1999 USRP)
 nano /etc/asterisk/simpleusb.conf
 ```
 # Paste this into simpleusb.conf
