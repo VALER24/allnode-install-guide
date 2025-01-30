@@ -19,3 +19,21 @@ cd ~
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
 ./AllScanInstallUpdate.php
+
+# install dvswitch_mode_switcher
+
+apt update && apt upgrade && apt install nodejs
+cd /opt
+git clone https://github.com/hquimby/dvswitch_mode_switcher
+cd dvswitch_mode_switcher
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+source ~/.bashrc
+nvm install 18
+nvm use 18
+cp configs/config.example.yml configs/config.yml
+cp configs/tg_alias.example.yml configs/tg_alias.yml
+cp debian/dvswitch_mode_switcher.service /etc/systemd/system/dvswitch_mode_switcher.service
+npm install yargs path
+npm i
