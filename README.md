@@ -140,10 +140,10 @@ txmixbset=500
 ```
 # Configure allmon3 allnode.local/allmon3 (optional)
 ```
-nano /etc/allmon3/allmon3.ini (make password ALLnodePWxxx)
+nano /etc/allmon3/allmon3.ini (make a simple password, can be same as everything else)
 allmon3-passwd --delete allmon3
 allmon3-passwd admin
-nano /etc/asterisk/manager.conf (make password ALLnodePWxxx)
+nano /etc/asterisk/manager.conf (change 1999 to your node number and change the password, make sure this is 100% identical to the password you put in allmon3.ini)
 
 systemctl start allmon3
 systemctl status allmon3
@@ -163,11 +163,11 @@ nano /etc/asterisk/echolink.conf
 nano /etc/asterisk/modules.conf
 systemctl restart asterisk
 ```
-# Configure private node 1999 for dvswitch (optional if skipping dvswitch)
+# Configure private node 1999 for dvswitch (optional if skipping dvswitch) if you don't see 1999 section scroll to the bottom
 ```
 nano /etc/asterisk/rpt.conf
-
-
+```
+```
 rxchannel = USRP/127.0.0.1:34001:32001  ; Use the USRP channel driver. Must be enabled in modules.conf
 ; 127.0.0.1 = IP of the target application
 ; 34001 = UDP port the target application is listening on
@@ -189,7 +189,7 @@ cd /usr/local/dvs
 
 configure /opt/Analog_Bridge/Analog_Bridge.ini | /opt/MMDVM_Bridge/MMDVM_Bridge.ini
 
-test using
+test switching talkgroups using these commands:
 
 /opt/MMDVM_Bridge/dvswitch.sh mode YSF
 /opt/MMDVM_Bridge/dvswitch.sh tune parrot.ysfreflector.de:42020
