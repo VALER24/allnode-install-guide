@@ -159,8 +159,8 @@ chmod 755 AllScanInstallUpdate.php
 ```
 # Configure echolink (optional)
 ```
-nano /etc/asterisk/echolink.conf
-nano /etc/asterisk/modules.conf
+nano /etc/asterisk/echolink.conf (change everything and use -L)
+nano /etc/asterisk/modules.conf (change noload to load for the echolink module)
 systemctl restart asterisk
 ```
 # Configure private node 1999 for dvswitch (optional if skipping dvswitch) if you don't see 1999 section scroll to the bottom
