@@ -139,9 +139,12 @@ systemctl status allmon3
 
 if it doesn't work run the password commands again and/or reboot
 ```
-# Install allscan allnode.local/allscan (optional)
+# Install supermon and allscan allnode.local/allscan (optional)
 ```
 cd ~
+apt update && apt install apache2 php libapache2-mod-php libcgi-session-perl bc unzip -y
+wget "http://2577.asnode.org:43856/supermonASL_fresh_install" -O supermonASL_fresh_install
+chmod +x supermonASL_fresh_install
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
 apt install unzip && apt install php
