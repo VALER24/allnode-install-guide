@@ -41,3 +41,14 @@ npm install yargs path
 npm i
 systemctl daemon-reload
 systemctl enable dvswitch_mode_switcher.service
+
+# install allnode software
+
+cd /opt
+git clone https://github.com/valer24/allnode_software
+cd allnode_software
+npm install express body-parser child_process fs path https
+npm i
+cp debian/allnode_software.service /etc/systemd/system/allnode_software.service
+systemctl daemon-reload
+systemctl enable allnode_software
