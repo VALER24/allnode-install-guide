@@ -1,15 +1,5 @@
 # Guide to installing software on AllNode device
 
-# Install everything with script
-
-```
-sudo -s
-cd /tmp
-nano script.sh (paste in the script.sh in this repo)
-chmod +x script.sh
-./script.sh
-```
-
 # Run updates and install allstarlink3, allmon3, & dvswitch
 
 ```
@@ -31,7 +21,6 @@ apt update && apt install dvswitch-server
 
 ```
 asl-menu (configure allstar, and make private node 1999 USRP)
-nano /etc/asterisk/simpleusb.conf
 ```
 # Delete /etc/asterisk/simpleusb.conf and then nano /etc/asterisk/simpleusb.conf and paste this:
 ```
