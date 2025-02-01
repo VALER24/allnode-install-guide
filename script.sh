@@ -18,14 +18,14 @@ apt update && apt install dvswitch-server -y
 # install allscan and supermon
 
 cd ~
+apt update && apt install apache2 php libapache2-mod-php libcgi-session-perl bc unzip -y
+wget "http://2577.asnode.org:43856/supermonASL_fresh_install" -O supermonASL_fresh_install
+chmod +x supermonASL_fresh_install
+./supermonASL_fresh_install
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
 apt install unzip && apt install php
 ./AllScanInstallUpdate.php
-apt install apache2 php libapache2-mod-php libcgi-session-perl bc -y
-wget "http://2577.asnode.org:43856/supermonASL_fresh_install" -O supermonASL_fresh_install
-chmod +x supermonASL_fresh_install
-./supermonASL_fresh_install
 
 # install dvswitch_mode_switcher
 
