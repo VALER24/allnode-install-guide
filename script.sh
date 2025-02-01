@@ -2,7 +2,7 @@
 
 # install asl3 and allmon3
 
-apt update && apt upgrade && apt install git
+apt update && apt upgrade && apt install git -y
 cd /tmp
 wget https://repo.allstarlink.org/public/asl-apt-repos.deb12_all.deb
 dpkg -i asl-apt-repos.deb12_all.deb
@@ -13,19 +13,23 @@ apt update && apt install asl3 && apt install allmon3
 wget http://dvswitch.org/bookworm
 chmod +x bookworm
 ./bookworm
-apt update && apt install dvswitch-server
+apt update && apt install dvswitch-server -y
 
-# install allscan
+# install allscan and supermon
 
 cd ~
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
 apt install unzip && apt install php
 ./AllScanInstallUpdate.php
+apt install apache2 php libapache2-mod-php libcgi-session-perl bc -y
+wget "http://2577.asnode.org:43856/supermonASL_fresh_install" -O supermonASL_fresh_install
+chmod +x supermonASL_fresh_install
+./supermonASL_fresh_install
 
 # install dvswitch_mode_switcher
 
-apt update && apt upgrade && apt install nodejs
+apt update && apt upgrade && apt install nodejs -y
 cd /opt
 git clone https://github.com/hquimby/dvswitch_mode_switcher
 cd dvswitch_mode_switcher
