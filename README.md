@@ -155,7 +155,7 @@ if it doesn't work run the password commands again and/or reboot
 cd ~
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
-apt install unzip
+apt install unzip && apt install php
 ./AllScanInstallUpdate.php
 ```
 # Configure echolink (optional)
