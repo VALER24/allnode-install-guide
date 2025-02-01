@@ -20,6 +20,7 @@ apt update && apt install dvswitch-server
 cd ~
 wget 'https://raw.githubusercontent.com/davidgsd/AllScan/main/AllScanInstallUpdate.php'
 chmod 755 AllScanInstallUpdate.php
+apt install unzip
 ./AllScanInstallUpdate.php
 
 # install dvswitch_mode_switcher
