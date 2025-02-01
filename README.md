@@ -251,3 +251,12 @@ cp debian/allnode_software.service /etc/systemd/system/allnode_software.service
 systemctl daemon-reload
 systemctl enable allnode_software
 ```
+Setup startpage
+```
+cd /var/www/html
+rm index.php
+rm index.html
+nano index.html
+# PASTE IN the index.html file located in this repo
+systemctl restart apache2
+```
