@@ -15,7 +15,7 @@ chmod +x bookworm
 ./bookworm
 apt update && apt install dvswitch-server -y
 
-# install allscan and supermon
+# install supermon and allscan
 
 cd ~
 apt update && apt install apache2 php libapache2-mod-php libcgi-session-perl bc unzip -y
