@@ -2,7 +2,7 @@
 
 # install asl3 and allmon3
 
-apt update && apt upgrade && apt install git apt install wget -y
+apt update && apt upgrade && apt install git && apt install wget -y
 cd /tmp
 wget https://repo.allstarlink.org/public/asl-apt-repos.deb12_all.deb
 dpkg -i asl-apt-repos.deb12_all.deb
