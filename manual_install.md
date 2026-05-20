@@ -6,14 +6,14 @@
 sudo -s
 apt update && apt upgrade && apt install git
 cd /tmp
-wget https://repo.allstarlink.org/public/asl-apt-repos.deb12_all.deb
-sudo dpkg -i asl-apt-repos.deb12_all.deb
+wget https://repo.allstarlink.org/public/asl-apt-repos.deb13_all.deb
+sudo dpkg -i asl-apt-repos.deb13_all.deb
 sudo apt update
 apt install asl3 && apt install allmon3
 
-wget http://dvswitch.org/bookworm
-chmod +x bookworm
-./bookworm
+wget http://dvswitch.org/trixie
+chmod +x trixie
+./trixie
 apt update && apt install dvswitch-server
 ```
 
