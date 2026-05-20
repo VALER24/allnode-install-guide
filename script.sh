@@ -4,15 +4,15 @@
 
 apt update && apt upgrade && apt install git && apt install wget -y
 cd /tmp
-wget https://repo.allstarlink.org/public/asl-apt-repos.deb12_all.deb
-dpkg -i asl-apt-repos.deb12_all.deb
+wget https://repo.allstarlink.org/public/asl-apt-repos.deb13_all.deb
+dpkg -i asl-apt-repos.deb13_all.deb
 apt update && apt install asl3 && apt install allmon3 -y
 
 # install dvswitch
 
-wget http://dvswitch.org/bookworm
-chmod +x bookworm
-./bookworm
+wget http://dvswitch.org/trixie
+chmod +x trixie
+./trixie
 apt update && apt install dvswitch-server -y
 
 # install supermon and allscan
