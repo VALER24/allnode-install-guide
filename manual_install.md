@@ -14,7 +14,7 @@ apt install asl3 && apt install allmon3
 wget http://dvswitch.org/trixie
 chmod +x trixie
 ./trixie
-apt update && apt install dvswitch-server
+apt update && apt install dvswitch-server && apt install stfu
 ```
 
 # Configure allstarlink
